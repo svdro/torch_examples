@@ -2,7 +2,7 @@ import torch
 from torch import Tensor
 from torch.utils.data import dataset
 from torchtext.vocab import Vocab
-from typing import Any
+from typing import Any, Tuple
 
 
 def data_process(
@@ -33,7 +33,7 @@ def batchify(data: Tensor, bsz: int, device: torch.device) -> Tensor:
     return data.to(device)
 
 
-def get_batch(source: Tensor, i: int, bptt: int = 35) -> tuple[Tensor, Tensor]:
+def get_batch(source: Tensor, i: int, bptt: int = 35) -> Tuple[Tensor, Tensor]:
     """
     Args:
         source: Tensor, shape [full_seq_len, batch_size]

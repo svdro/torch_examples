@@ -54,10 +54,15 @@ class MultiheadAttention(nn.Module):
         xavier_uniform_(self.v_proj_w)
         xavier_uniform_(self.out_proj_w)
 
-        if self.bias_q is not None and self.bias_out_proj is not None:
-            xavier_normal_(self.q_proj_w)
-            xavier_normal_(self.k_proj_w)
-            xavier_normal_(self.v_proj_w)
+        if (
+            self.bias_q is not None
+            and self.bias_k is not None
+            and self.bias_v is not None
+            and self.bias_out_proj is not None
+        ):
+            xavier_normal_(self.bias_q)
+            xavier_normal_(self.bias_k)
+            xavier_normal_(self.bias_v)
             constant_(self.bias_out_proj, 0)
 
     def forward(

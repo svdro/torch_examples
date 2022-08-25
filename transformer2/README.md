@@ -1,9 +1,9 @@
 # Transformer from scratch
 
  * [x] scaled dot product attention
- * [ ] multi head attention
- * [ ] positional encoding
- * [ ] encoder
+ * [x] multi head attention
+ * [x] positional encoding
+ * [x] encoder
  * [ ] decoder
- * [ ] encoder only example
+ * [x] encoder only example
  * [ ] encoder decoder example
